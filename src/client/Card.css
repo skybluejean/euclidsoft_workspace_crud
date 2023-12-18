@@ -1,0 +1,49 @@
+/* Card.css */
+.card-Container{
+  width: 360px;
+  height: 160px;
+  background-color: lightcoral;
+  border: 3px double lightslategrey;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px gray; /* 그림자 효과*/
+  margin: 10px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.card-editButton-Container{
+  width: 500px;
+  height: 200px;
+  background-color: slateblue;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  padding: 20px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.job-title {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  margin-bottom: 10px;
+}
+
+.thumnail-size{
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}

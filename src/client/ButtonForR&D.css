@@ -1,0 +1,26 @@
+.RnD-Container{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+  width: 70px;
+  height: 100px;
+  background-color: violet;
+  border: 3px double lightslategrey;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 1px gray; /* 그림자 효과*/
+  margin: 5px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.button-Size{
+  width: 90px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 15px;
+  text-align: center;
+}
