@@ -6,7 +6,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
-//const mysql2 = require('mysql2');
 
 const app = express();
 const port = 3001;
@@ -31,6 +30,7 @@ db.connect(err => {
 });
 
 // Express 미들웨어 설정
+//app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -60,6 +60,36 @@ app.get('/', (req, res) => {
       }
   });
 });
+
+app.put('/card/:id', (req,res) => {
+    const userId = req.params.id;
+    const sql = "UPDATE userinfo SET `name` = ?, `job_title` = ?, `phone_number` = ?, `email` = ?";
+    const values = [
+        req.body.name,
+        req.body.job_title,
+        req.body.phone_number,
+        req.body.email,
+    ];
+    db.query(sql, [...values, userId], (err,result) => {
+        if(err) return res.send(err);
+        return res.json(result);
+    });
+});
+
+app.delete('/card/:id', (req,res) => {
+    const sql = "DELETE FROM userinfo WHERE ID = ?";
+    // const values = [
+    //     req.body.name,
+    //     req.body.job_title,
+    //     req.body.phone_number,
+    //     req.body.email
+    // ]
+    const id = req.params.id;
+    db.query(sql, [id], (err,result) => {
+        if(err) return res.json(err);
+        return res.json(result);
+    })
+})
 
 // 서버 시작
 app.listen(port, () => {
